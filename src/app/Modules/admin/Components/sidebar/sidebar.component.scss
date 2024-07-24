@@ -1,0 +1,58 @@
+.sidebar {
+  width: 100px; /* Sidebar width */
+  height: 100%; /* Full height */
+  background-color: #243a73; /* Sidebar background color */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px; /* Space at the top */
+}
+
+.logo-container {
+  /* Center the logo */
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px; /* Space below the logo */
+}
+
+.logo {
+  max-width: 100px; /* Adjust the size as needed */
+}
+
+.navigation {
+  width: 100%;
+}
+
+.navigation a {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px; /* Padding inside navigation items */
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Text color for navigation items */
+  justify-content: CENTER;
+  transition: padding 600ms ease-in-out, background-color 300ms ease-in-out;
+
+  height: 80px;
+}
+
+.navigation a:hover {
+  background-color: #1b2d4f; // Adjust the color to fit your design
+}
+
+.navigation mat-icon {
+  font-size: 35px; /* Makes icons larger */
+  height: 35px; /* Adjust to fit the new font size */
+  width: 35px; /* Adjust to fit the new font size */
+}
+
+
+.navigation a.active {
+  background-color: #0C4672; // Adjust based on your sidebar's color scheme
+  color: white; // This color will apply to the text/icon inside
+  
+  mat-icon {
+    color: white; // Ensure the icon color changes as well, if needed
+  }
+}

@@ -1,0 +1,113 @@
+<span style="display: flex; overflow: auto;" [style.height]="height">
+    <table mat-table [dataSource]="VideoPaginator" multiTemplateDataRows class="mat-elevation-z8">
+    
+        <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+            <th mat-header-cell *matHeaderCellDef [style.width]="getColumnWidth(column)"> {{column}} </th>
+            <td [class]="currentVideo === element ? 'isActive' : ''" (click)="setVideo(element)" mat-cell
+                *matCellDef="let element"> {{element[column]}} </td>
+        </ng-container>
+        <ng-container matColumnDef="expand">
+            <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+            <td [class]="currentVideo === element ? 'isActive' : ''" (click)="setVideo(element)" mat-cell
+                *matCellDef="let element">
+                <button (click)="setVideo(element); $event.stopPropagation()" mat-icon-button aria-label="expand row"
+                    (click)="(expandedElement = expandedElement === element ? null : element); $event.stopPropagation()">
+                    <mat-icon [class]="element === currentVideo ? 'iconActive' : 'icon'"
+                        *ngIf="expandedElement !== element">keyboard_arrow_down</mat-icon>
+                    <mat-icon [class]="element === currentVideo ? 'iconActive' : 'icon'"
+                        *ngIf="expandedElement === element">keyboard_arrow_up</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="titulo">
+            <th mat-header-cell *matHeaderCellDef [style.width]="getColumnWidth('titulo')"> Título </th>
+            <td [class]="currentVideo === element ? 'isActive' : ''" (click)="setVideo(element)" mat-cell
+                *matCellDef="let element">
+                {{element.titulo}}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="subido_por">
+            <th mat-header-cell *matHeaderCellDef [style.width]="getColumnWidth('subido_por')"> Subido Por </th>
+            <td [class]="currentVideo === element ? 'isActive' : ''" (click)="setVideo(element)" mat-cell
+                *matCellDef="let element">
+                {{element.subido_por}}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fecha_subida">
+            <th mat-header-cell *matHeaderCellDef [style.width]="getColumnWidth('fecha_subida')"> Fecha de Subida </th>
+            <td [class]="currentVideo === element ? 'isActive' : ''" (click)="setVideo(element)" mat-cell
+                *matCellDef="let element">
+                {{element.fecha_subida | date : "dd/MM/yyyy hh:mm:ss" }}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef [style.width]="getColumnWidth('tipo')"> Tipo </th>
+            <td [class]="currentVideo === element ? 'isActive' : ''" (click)="setVideo(element)" mat-cell
+                *matCellDef="let element">
+                {{element.tipo}}
+            </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef [style.width]="getColumnWidth('actions')"> Actions </th>
+            <td [class]="currentVideo === element ? 'isActive' : ''" (click)="setVideo(element)" mat-cell
+                *matCellDef="let element">
+                <button (click)="setVideo(element); $event.stopPropagation()" mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Edit</button>
+                    <button mat-menu-item>Delete</button>
+                </mat-menu>
+            </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="estado_actual">
+            <th mat-header-cell *matHeaderCellDef [style.width]="getColumnWidth('estado_actual')"> 
+                <span class="d-flex justify-content-center">
+                    Estado Actual
+                </span>
+            </th>
+            <td [class]="currentVideo === element ? 'isActive' : ''" (click)="setVideo(element)" mat-cell
+                *matCellDef="let element">
+                <span class="d-flex justify-content-center">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" style="transform: scale(1.3);"
+                            [checked]="element.estado_actual" [disabled]="true" role="switch">
+                    </div>
+                </span>
+            </td>
+        </ng-container>
+        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+        <ng-container matColumnDef="expandedDetail">
+            <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand.length">
+                <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                    <div class="row d-flex align-items-center" style="width: 100%; min-height: 200px; height: auto;">
+                        <div class="col-lg-3 col-xxl-3 col-md-4 d-flex justify-content-center align-items-center" style="height: 80%">
+                            <!-- <iframe style="width: 100%; object-fit: cover;" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe> -->
+                        </div>
+                        <div class="col-lg-9 col-xxl-9 col-md-8 py-2" style="height: 200px;">
+                            <h3 class="video-title">{{element.titulo}}</h3>
+                            <p class="video-description mt-1">{{element.descripcion}}</p>
+                            <small class="video-last-update align-self-end">Last Update: {{element.fecha_edicion}}</small>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+        <tr mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand;" class="example-element-row"
+            
+            (click)="expandedElement = expandedElement === element ? null : element">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+    </table>   
+</span>
+
+
+<mat-paginator #paginator [pageSize]="15" showFirstLastButtons></mat-paginator>

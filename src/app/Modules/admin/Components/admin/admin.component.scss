@@ -1,0 +1,104 @@
+@import "./../../../../variables.scss";
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    font-family: $primary-font;
+    font-weight: 400;
+    color: #545454;
+}
+
+
+.row > * {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+}
+
+.sidenav{
+    height: 100vh;
+    background-color: #191919;
+}
+
+.card-container{
+    display:flex; 
+    justify-content: center;
+    width: 100%;
+}
+
+.logo-container{
+    display: flex; 
+    justify-content: center;
+}
+
+.logo{
+    width: 25%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.menu-element{
+    height: 50px; 
+    transition: ease-in-out;
+    transition-duration: 600ms;
+    .menu-item{
+        color: #fff;
+        width:70%;
+        display: flex;
+        align-items: center;
+        transition:ease-in-out;
+        transition-duration: 600ms;
+        h4{
+            font-weight: 400;
+            font-family: $primary-font;
+            color: #fff
+        }
+    }
+
+    .menu-icon-minimized{
+        font-size: 2rem;
+    }
+}
+
+.is-active{
+    transition:ease-in-out;
+    transition-duration: 600ms;
+    background-color: $primary-color;
+    border-radius: 6px;
+    .menu-item{
+        width: 55%;
+        display: flex;
+        align-items: center;
+        transition:ease-in-out;
+        transition-duration: 600ms;
+        h4{
+            font-weight: 500;
+            color: $primary-color-hovered;
+        }
+
+        .menu-icon{
+            color: $primary-color-hovered
+        }
+
+        .menu-icon-minimized{
+            font-size: 2rem;
+            color: $primary-color-hovered
+        }
+    }
+}
+
+.menu-element:hover{
+    transition:ease-in-out;
+    transition-duration: 600ms;
+    .menu-item{
+        text-decoration: underline;
+    }    
+}
+
+/* .col-1, .col-2, .col-10, .col-11{
+    transition:ease-in-out;
+    transition-duration: 600ms;
+} */
+
+

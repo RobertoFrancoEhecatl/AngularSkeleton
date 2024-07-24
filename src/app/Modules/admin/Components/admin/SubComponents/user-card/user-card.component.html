@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="my-1"><fa-icon [icon]="faCircleUser"></fa-icon> {{currentUser.userRol === 1 ? 'Admin' : 'Normal' | titlecase}}</h5>
+        <div class="d-flex mt-3">
+            <div class="flex-grow-1 me-5" style="width: 70%;">
+                {{currentUser.userName}}
+            </div>
+            <div class="flex-fill">
+                <fa-icon (click)="logOut()" class="logout" [icon]="faArrowRightFromBracket"></fa-icon>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,170 @@
+[
+    {
+        "tipo": "info",
+        "usuario": "user1",
+        "fecha": "2024-02-04T10:30:00",
+        "nombre_log": "Inicio de sesión",
+        "descripcion": "El usuario user1 inició sesión correctamente."
+    },
+    {
+        "tipo": "warn",
+        "usuario": "user2",
+        "fecha": "2024-02-04T11:45:00",
+        "nombre_log": "Error de validación",
+        "descripcion": "Error al validar los datos del formulario."
+    },
+    {
+        "tipo": "error",
+        "usuario": "user3",
+        "fecha": "2024-02-04T12:15:00",
+        "nombre_log": "Error de servidor",
+        "descripcion": "Se produjo un error interno en el servidor."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user1",
+        "fecha": "2024-02-04T13:20:00",
+        "nombre_log": "Carga de datos",
+        "descripcion": "Los datos se cargaron correctamente."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user2",
+        "fecha": "2024-02-04T14:30:00",
+        "nombre_log": "Operación exitosa",
+        "descripcion": "La operación se realizó con éxito."
+    },
+    {
+        "tipo": "warn",
+        "usuario": "user3",
+        "fecha": "2024-02-04T15:00:00",
+        "nombre_log": "Error de conexión",
+        "descripcion": "Error al intentar conectar con el servidor."
+    },
+    {
+        "tipo": "error",
+        "usuario": "user1",
+        "fecha": "2024-02-04T16:10:00",
+        "nombre_log": "Error crítico",
+        "descripcion": "Se produjo un error crítico en la aplicación."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user2",
+        "fecha": "2024-02-04T17:20:00",
+        "nombre_log": "Actualización realizada",
+        "descripcion": "Se ha completado la actualización del sistema."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user3",
+        "fecha": "2024-02-04T18:30:00",
+        "nombre_log": "Operación completada",
+        "descripcion": "La operación se ha completado correctamente."
+    },
+    {
+        "tipo": "warn",
+        "usuario": "user1",
+        "fecha": "2024-02-04T19:45:00",
+        "nombre_log": "Advertencia de seguridad",
+        "descripcion": "Se detectó un posible riesgo de seguridad."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user2",
+        "fecha": "2024-02-04T20:00:00",
+        "nombre_log": "Consulta realizada",
+        "descripcion": "Se ha completado la consulta de datos."
+    },
+    {
+        "tipo": "error",
+        "usuario": "user3",
+        "fecha": "2024-02-04T21:10:00",
+        "nombre_log": "Error de base de datos",
+        "descripcion": "Se produjo un error al acceder a la base de datos."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user1",
+        "fecha": "2024-02-04T22:20:00",
+        "nombre_log": "Sesión finalizada",
+        "descripcion": "La sesión del usuario user1 ha finalizado."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user2",
+        "fecha": "2024-02-04T23:30:00",
+        "nombre_log": "Inicio de sesión",
+        "descripcion": "El usuario user2 inició sesión correctamente."
+    },
+    {
+        "tipo": "warn",
+        "usuario": "user3",
+        "fecha": "2024-02-05T10:00:00",
+        "nombre_log": "Error de autenticación",
+        "descripcion": "Error al autenticar el usuario."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user1",
+        "fecha": "2024-02-05T11:15:00",
+        "nombre_log": "Acceso concedido",
+        "descripcion": "El usuario user1 ha obtenido acceso al recurso."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user2",
+        "fecha": "2024-02-05T12:30:00",
+        "nombre_log": "Registro completo",
+        "descripcion": "Se ha completado el proceso de registro."
+    },
+    {
+        "tipo": "error",
+        "usuario": "user3",
+        "fecha": "2024-02-05T13:45:00",
+        "nombre_log": "Error de aplicación",
+        "descripcion": "Se ha producido un error en la aplicación."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user1",
+        "fecha": "2024-02-05T14:50:00",
+        "nombre_log": "Operación finalizada",
+        "descripcion": "La operación se ha completado con éxito."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user2",
+        "fecha": "2024-02-05T15:00:00",
+        "nombre_log": "Solicitud realizada",
+        "descripcion": "Se ha enviado correctamente la solicitud."
+    },
+    {
+        "tipo": "warn",
+        "usuario": "user3",
+        "fecha": "2024-02-05T16:20:00",
+        "nombre_log": "Error en proceso",
+        "descripcion": "Se detectó un error durante el proceso."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user1",
+        "fecha": "2024-02-05T17:30:00",
+        "nombre_log": "Operación completada",
+        "descripcion": "La operación se ha completado correctamente."
+    },
+    {
+        "tipo": "info",
+        "usuario": "user2",
+        "fecha": "2024-02-05T18:45:00",
+        "nombre_log": "Carga de datos",
+        "descripcion": "Los datos se han cargado exitosamente."
+    },
+    {
+        "tipo": "error",
+        "usuario": "user3",
+        "fecha": "2024-02-05T19:50:00",
+        "nombre_log": "Error en servidor",
+        "descripcion": "Se ha producido un error en el servidor."
+    }
+]

@@ -1,0 +1,8 @@
+<div class="container-fluid skeleton-container">
+    <div class="row" *ngFor="let rowIndex of rowIndices">
+        <div [class]="colIndex.class + ' py-2'" *ngFor="let colIndex of colIndices">
+            <ngx-skeleton-loader count="1" appearance="line" />
+        </div>
+    </div>
+</div>
+

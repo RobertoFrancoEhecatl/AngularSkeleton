@@ -1,0 +1,74 @@
+<div class="container-fluid px-5 py-4" style="height: 95vh; width: auto;">
+    <span class="d-flex justify-content-start">
+        <a class="breadcrumb me-2" [routerLink]="'/admin/videos'">Logs </a>
+    </span>
+    <section class="nuevo-video-header px-3 py-3 mb-3 mt-3">
+        <div class="row">
+            <div class="col-2 d-flex justify-content-start align-items-center">
+                <a routerLink="/admin/videos"><fa-icon [icon]="faArrowLeft"></fa-icon> Regresar</a>
+            </div>
+            <div class="col-8">
+                <h1 class="nuevo-video-title">Registro de Actividades (Logs)</h1>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </section>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-3 col-md-5">
+            <label for="exampleFormControlInput1" class="form-label">Campo de búsqueda</label>
+            <select class="form-select" aria-label="Default select example">
+                <option class="filter-option" selected>Open this select menu</option>
+                <option class="filter-option" value="1">One</option>
+                <option class="filter-option" value="2">Two</option>
+                <option class="filter-option" value="3">Three</option>
+            </select>
+        </div>
+        <div class="col-3 col-md-4">
+            <label for="exampleFormControlInput1" class="form-label">Actividad </label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre de la Actividad">
+        </div>
+        <div class="col-3 d-flex justify-content-md-end align-items-end">
+            <button class="btn btn-success">Filtrar Logs</button>
+        </div>
+    </div>
+    <br>
+
+    <!-- Card para registros  -->
+    <mat-card class="mat-card-table mt-3" style="height: calc(100vh - 55vh); overflow-y: scroll;">
+        <mat-card-content class="card-content-table">
+            <span *ngIf="!done">
+                <app-skeleton-table></app-skeleton-table>
+            </span>
+
+            <table *ngIf="done" mat-table [dataSource]="dataSource">
+
+                <ng-container matColumnDef="usuario">
+                    <th mat-header-cell *matHeaderCellDef> Usuario </th>
+                    <td class="cell-style" mat-cell *matCellDef="let element"> 
+                        {{element.usuario}} 
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nombre_log">
+                    <th mat-header-cell *matHeaderCellDef> Actividad </th>
+                    <td class="cell-style" mat-cell *matCellDef="let element"> {{element.nombre_log}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="descripción">
+                    <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                    <td class="cell-style" mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="fecha">
+                    <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                    <td class="cell-style" mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </mat-card-content>
+    </mat-card>
+    <mat-paginator #paginator [pageSize]="15" showFirstLastButtons></mat-paginator>
+</div>

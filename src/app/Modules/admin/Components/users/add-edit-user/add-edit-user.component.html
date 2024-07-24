@@ -1,0 +1,74 @@
+<div class="container-fluid px-5 py-4" style="height: 95vh; width: 80vw;">
+    <span class="d-flex justify-content-start">
+        <a class="breadcrumb me-2" [routerLink]="'/admin/videos'">Usuarios </a> / <a class="breadcrumb-active ms-2">
+            Alta de Usuario</a>
+    </span>
+    <section class="nuevo-video-header px-3 py-3 mb-3 mt-3">
+        <div class="row">
+            <div class="col-2 d-flex justify-content-start align-items-center">
+                <a routerLink="/admin/videos"><fa-icon [icon]="faArrowLeft"></fa-icon> Regresar</a>
+            </div>
+            <div class="col-8">
+                <h1 class="nuevo-video-title">Nuevo Usuario</h1>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </section>
+    <hr style="margin: 0;">
+    <section class="form-container">
+        <form [formGroup]="UserForm" style="width: 98%;">
+            <div class="row px-4 py-4 mt-3">
+                <div class="col-4">
+                    <label for="exampleFormControlInput1" class="form-label">Nombre <span class="text-danger" *ngIf="!UserForm.get('usuario_nombre').value && UserForm.get('usuario_nombre').touched"> (Campo Obligatorio)</span></label>
+                    <input type="text" formControlName="usuario_nombre" class="form-control" placeholder="Nombre(s)">
+                </div>
+                <div class="col-4">
+                    <label for="exampleFormControlInput1" class="form-label">Primer Apellido </label><span class="text-danger" *ngIf="!UserForm.get('usuario_primer_apellido').value && UserForm.get('usuario_primer_apellido').touched"> (Campo Obligatorio)</span>
+                    <input type="text" formControlName="usuario_primer_apellido" class="form-control" placeholder="Ingrese el primer apellido">
+                </div>
+                <div class="col-4">
+                    <label for="exampleFormControlInput1" class="form-label">Segundo Apellido </label><span class="text-danger" *ngIf="!UserForm.get('usuario_segundo_apellido').value && UserForm.get('usuario_segundo_apellido').touched"> (Campo Obligatorio)</span>
+                    <input type="text" formControlName="usuario_segundo_apellido" class="form-control" placeholder="Ingrese el segundo apellido">
+                </div>
+            </div>
+            <div class="row px-4 mt-3">
+                <div class="col-6">
+                    <label for="exampleFormControlInput1" class="form-label">Correo</label> <span class="text-danger" *ngIf="!UserForm.get('usuario_email').value && UserForm.get('usuario_email').touched"> (Campo Obligatorio)</span> <span class="text-danger" *ngIf="UserForm.controls['usuario_email'].hasError('email') && UserForm.get('usuario_email').touched"> (Ingrese un email valido)</span>
+                    <input type="text" formControlName="usuario_email" class="form-control" placeholder="usuario@ejemplo.com">
+                </div>
+                <div class="col-6">
+                    <label for="exampleFormControlInput1" class="form-label">Seleccione el rol</label><span class="text-danger" *ngIf="!UserForm.get('usuario_rol').value && UserForm.get('usuario_rol').touched"> (Campo Obligatorio)</span>
+                    <select formControlName="usuario_rol" class="form-select" aria-label="Default select example">
+                        <option class="filter-option" selected>Open this select menu</option>
+                        <option class="filter-option" value="1">One</option>
+                        <option class="filter-option" value="2">Two</option>
+                        <option class="filter-option" value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row px-4 mt-5">
+                <div class="col-6">
+                    <div class="col-12">
+                        <label for="exampleFormControlInput1" class="form-label">Foto de Perfil</label> <span class="text-danger" *ngIf="!UserForm.get('usuario_foto').value && UserForm.get('usuario_foto').touched"> (Campo Obligatorio)</span>
+                        <input (change)="onFileSelected($event)" type="file" accept="image/*" class="form-control">
+                    </div>
+
+                    <div class="col-12 mt-5" *ngIf="UserForm.get('usuario_foto').value">
+                        <label *ngIf="UserForm.get('usuario_foto').value" for="exampleFormControlInput1"
+                            class="form-label">Vista Previa de foto de Perfil</label>
+                        <br>
+                        <span class="col-12 d-flex justify-content-center mt-3">
+                            <img [src]="UserForm.get('usuario_foto').value"
+                            style="width: 30%; height: 20vh; object-fit: cover; border-radius: 50%;" alt="Imagen cargada"
+                            *ngIf="UserForm.get('usuario_foto').value">
+                        </span>
+                    </div>
+                </div>
+                <div class="col-6"></div>
+            </div>
+        </form>
+    </section>
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-success" (click)="postUser()">Continuar</button>
+    </div>
+</div>

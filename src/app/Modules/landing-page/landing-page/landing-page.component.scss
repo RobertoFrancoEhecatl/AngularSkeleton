@@ -1,0 +1,101 @@
+@import '../../../variables.scss';
+
+.first-section {
+    background: url('../../../../assets/Images/hymnals-4442608_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #005e5d48;
+    background-blend-mode: overlay;
+    height: 25vh;
+}
+
+h1 {
+    font-family: $zohar-font;
+    font-size: 4rem;
+    color: #fff;
+    font-style: italic;
+}
+
+.grettings {
+    height: 25vh;
+    width: 45vw;
+    border: solid 1px red;
+}
+
+.greetings-text {
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: $zohar-font;
+    line-height: 28px;
+}
+
+.third-section {
+    margin: 0;
+    height: 300px;
+}
+
+.zohar-description {
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: $zohar-font;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.play-video {
+    font-size: 4rem;
+    color: hwb(0 100% 0% / 0.70);
+    transition: ease-in;
+    transition-duration: 300ms;
+}
+
+.play-video:hover {
+    font-size: 4.5rem;
+    color: hwb(0 100% 0% / 0.9);
+    transition: ease-out;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+
+.contact {
+    font-weight: bold;
+    color: #fff;
+    font-family: $zohar-font;
+    margin: 0;
+}
+
+.contact-data {
+    margin: 0;
+    color: #fff;
+    font-family: $zohar-font;
+}
+
+.pages {
+    margin: 0;
+    color: #fff;
+    font-family: $zohar-font;
+}
+
+
+.latest-videos {
+    transition: scroll-left 0.3s ease-in-out;
+}
+
+
+button {
+    background-color: #f0f0f000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Definimos la transición */
+  }
+  
+  button:hover {
+    background-color: #ffffff62; /* Cambiamos el color de fondo al pasar el ratón */
+    transform: scale(1.1); /* Efecto de escala al pasar el ratón */
+    border: none;
+  }

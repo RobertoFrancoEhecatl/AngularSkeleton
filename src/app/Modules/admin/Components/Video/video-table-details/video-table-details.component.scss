@@ -1,0 +1,126 @@
+@import "./../../../../../variables.scss";
+
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+}
+
+
+table {
+    width: 100%;
+  }
+  
+  tr.example-detail-row {
+    height: 0;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+  }
+  
+  .example-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+  }
+  
+  .example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+  
+  .example-element-description {
+    padding: 16px;
+  }
+  
+  .example-element-description-attribution {
+    opacity: 0.5;
+  }
+
+  .mat-mdc-table .mat-mdc-table thead,  .mat-mdc-header-row,.mat-mdc-header-cell{
+    position: sticky;
+    top: 0;
+    font-family: $primary-font;
+    font-size: 1rem;
+    color: $primary-green;
+    z-index: 1000;
+}   
+
+.mat-column-expand {
+  width: 5%;
+  font-family: $primary-font;
+}
+
+.mat-column-titulo{
+  width: 15%;
+  font-family: $primary-font;
+}
+
+.mat-column-subido_por{
+  width: 15%;
+  font-family: $primary-font;
+}
+
+.mat-column-fecha_subida{
+  width: 15%;
+  font-family: $primary-font;
+}
+
+.mat-column-estado_actual{
+  width: 15%;
+  font-family: $primary-font;
+}
+
+.mat-column-actions{
+  text-align: center;
+  font-family: $primary-font;
+}
+
+.isActive{
+  background-color: rgba(110, 110, 110, 0.7);
+  color: #fff
+}
+
+.iconActive{
+  color: #fff
+}
+
+.icon{
+  color: $primary-green
+}
+
+.mat-column-expandedDetail{
+  background-color: hsla(0, 0%, 72%, 0.7);
+}
+
+.video-title{
+  font-family: $primary-font;
+  font-weight: 600;
+  color: #52525C
+}
+
+.video-description{
+  font-family: $primary-font;
+  color: #52525C
+}
+
+.video-last-update{
+  font-family: $primary-font;
+  color: #52525C
+}

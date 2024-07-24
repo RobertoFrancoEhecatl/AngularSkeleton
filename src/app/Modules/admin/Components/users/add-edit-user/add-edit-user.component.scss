@@ -1,0 +1,29 @@
+@import "./../../../../../variables.scss";
+
+
+h1{
+    margin: 0;
+}
+
+.nombre{
+    padding-right: 0;
+}
+
+.form-container{
+    max-height: 70%; 
+    height: auto; 
+    overflow-y: overlay; 
+    //border: solid 1px blue;
+}
+
+.text-danger{
+    font-size: 12px;
+}
+
+.nuevo-video-title{
+    font-family: $primary-font;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: $primary-green
+}

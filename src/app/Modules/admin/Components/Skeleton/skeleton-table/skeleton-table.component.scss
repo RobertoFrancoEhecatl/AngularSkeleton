@@ -1,0 +1,13 @@
+.skeleton-container{
+    overflow-y: hidden; 
+    height: auto; 
+    max-height: 83vh; 
+}
+
+@media only screen and (max-width: 1366px) {
+    .skeleton-container{
+        overflow-y: hidden; 
+        height: auto; 
+        max-height: 75vh; 
+    }
+}

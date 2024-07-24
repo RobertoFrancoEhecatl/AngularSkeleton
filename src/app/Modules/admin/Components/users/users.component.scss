@@ -1,0 +1,27 @@
+@import "./../../../../variables.scss";
+
+.mat-mdc-card-content:last-child{
+    padding-bottom: 0px;
+}
+
+.mat-mdc-card-content:first-child {
+    padding-top: 0px;
+}
+
+.mat-mdc-table .mat-mdc-table thead,  .mat-mdc-header-row,.mat-mdc-header-cell{
+    position: sticky;
+    top: 0;
+    font-family: $primary-font;
+    font-size: 1rem;
+    color: $primary-green
+}   
+
+.nuevo-video-title{
+    font-family: $primary-font;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: $primary-green;
+    margin: 0;
+}
+

@@ -1,0 +1,60 @@
+import { Transaction } from '../Interfaces/Transaction';
+
+export const ELEMENT_DATA: Transaction[] = [
+  {
+    transactionNo: 'T000-10',
+    creationDate: new Date('2024-01-10T10:00:00'),
+    progress: 50,
+    status: 'En proceso',
+    responsible: 'Carlos Aguilar',
+    etapa: 'Validando archivos',
+  },
+  {
+    transactionNo: 'T001-11',
+    creationDate: new Date('2024-02-28T14:00:00'),
+    progress: 100,
+    status: 'Atencion',
+    responsible: 'Carolina Herrera',
+    etapa: 'Extrayendo información',
+  },
+  {
+    transactionNo: 'T002-12',
+    creationDate: new Date('2024-03-11T17:30:00'),
+    progress: 59,
+    status: 'En proceso',
+    responsible: 'Emiliano Huerta',
+    etapa: 'Clasificando hallazgos',
+  },
+  {
+    transactionNo: 'T003-13',
+    creationDate: new Date('2024-03-11T17:30:00'),
+    progress: 34,
+    status: 'Llenando pedimento',
+    responsible: 'Emiliano Huerta2',
+    etapa: 'Cancelado',
+  },
+  {
+    transactionNo: 'T004-14',
+    creationDate: new Date('2024-03-11T17:30:00'),
+    progress: 31,
+    status: 'En proceso',
+    responsible: 'Emiliano Huerta3',
+    etapa: 'Generación de reportes',
+  },
+  {
+    transactionNo: 'T004-15',
+    creationDate: new Date('2024-03-11T17:30:00'),
+    progress: 14,
+    status: 'OK',
+    responsible: 'Jorge Pérez',
+    etapa: 'Clasificación de hallazgos',
+  },
+  {
+    transactionNo: 'T004-15',
+    creationDate: new Date('2024-03-11T17:30:00'),
+    progress: 49,
+    status: 'En progreso',
+    responsible: 'Quique Pérez',
+    etapa: 'Revisión de hallazgos',
+  },
+];

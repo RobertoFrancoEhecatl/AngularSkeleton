@@ -1,0 +1,128 @@
+@import "./../../../../variables.scss";
+
+.login-bg {
+  height: 100vh;
+  /*     background-image: linear-gradient(to right, #434343 0%, black 100%);
+ */
+  background-image: url("../../../../../assets/Images/login-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-img-top {
+  width: 20%;
+}
+
+.example-container {
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+.card {
+  background-color: rgba(84, 84, 84, 0.75);
+  flex-direction: column;
+  justify-content: center; /* Aligns children vertically in the center */
+  align-items: center; /* Aligns children horizontally in the center */
+  height: 100vh;
+}
+
+.card-center {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ffffff; /* Placeholder text color */
+  opacity: 1; /* Placeholder text opacity */
+}
+
+.card-title {
+  font-weight: 500;
+  font-family: $primary-font;
+  padding-bottom: 0;
+  height: 30%;
+}
+.card-body {
+  width: 100%;
+}
+
+.form-control-login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-text {
+  font-family: $primary-font;
+  font-weight: 600;
+}
+
+.login-input {
+  width: 100%;
+}
+
+.login-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-btn {
+  width: 70%;
+  color: white;
+  background-color: #d87043;
+  border: none;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.icon {
+  transition-duration: 1200ms;
+  transition-timing-function: ease;
+  color: #a1a1a1;
+}
+
+.icon-disabled {
+  transition-duration: 1200ms;
+  transition-timing-function: ease;
+  color: #fff;
+}
+
+.forgot-password-link {
+  font-family: $primary-font;
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: $primary-color;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 600ms;
+}
+
+.forgot-password-link:hover {
+  font-weight: bolder;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 600ms;
+}
+
+.h2 {
+  font-family: $secondary-font;
+}
+.input-group-text {
+  background-color: transparent;
+}
+
+.input-group {
+  position: relative;
+  color: white;
+  font-size: 16px;
+}
+.icon-container {
+  position: absolute;
+  left: 10px; /* Or however much padding you want */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d87043;
+}

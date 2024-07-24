@@ -1,0 +1,113 @@
+<body>
+  <section class="login-bg" style="height: 100vh">
+    <div class="d-flex align-items-center row" style="height: 100vh; margin: 0">
+      <div class="card col-sm-7 col-md-6 col-lg-6 col-xl-6 col-xxl-5 pb-4">
+        <div class="card-center">
+          <div class="justify-content-center d-flex px-4 pt-4">
+            <img
+              class="card-img-top"
+              src="../../../../../assets/Images/logo2.svg"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card-body px-4">
+            <h2 class="card-title" style="text-align: center; color: white">
+              Inicio de sesión
+            </h2>
+            <form [formGroup]="loginForm" class="form-control-login">
+              <div class="example-container">
+                <div class="col-6 mb-1" style="width: 100%">
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="background-color: transparent; color: white"
+                    formControlName="userEmail"
+                    id="exampleFormControlInput1"
+                    placeholder="correo@ejemplo.com"
+                  />
+                  <div class="error-container mt-1" style="height: 15px">
+                    <small
+                      class="col-12 text-danger d-flex justify-content-end"
+                      *ngIf="
+                        loginForm.controls['userEmail'].hasError('required') &&
+                        loginForm.controls['userEmail'].touched
+                      "
+                    >
+                      (El email es necesario)
+                    </small>
+                    <small
+                      class="col-12 text-danger d-flex justify-content-end"
+                      *ngIf="loginForm.controls['userEmail'].hasError('email')"
+                    >
+                      (Ingrese un email valido)
+                    </small>
+                  </div>
+                </div>
+                <div class="input-group mb-1">
+                  <div class="input-group">
+                    <span class="icon-container">
+                      <fa-icon
+                        [icon]="faLock"
+                        style="color: #d87043; border: none !important"
+                      ></fa-icon>
+                    </span>
+                    <input
+                      formControlName="userPassword"
+                      [type]="hide ? 'password' : 'text'"
+                      class="form-control"
+                      style="
+                        background-color: transparent;
+                        color: white;
+                        padding-left: 40px;
+                        border-radius: 2px;
+                        border-right: none;
+                      "
+                      id="floatingInputGroup1"
+                      placeholder="Contraseña"
+                    />
+
+                    <span
+                      (click)="hide = !hide"
+                      class="input-group-text"
+                      style="border-left: none"
+                    >
+                      <fa-icon
+                        style="color: #d87043; border-radius: 0px"
+                        [icon]="hide ? faEyeSlash : faEye"
+                      ></fa-icon>
+                    </span>
+                  </div>
+                </div>
+                <div class="error-container" style="height: 50px">
+                  <small
+                    class="col-12 text-danger d-flex justify-content-end"
+                    *ngIf="
+                      loginForm.controls['userPassword'].touched &&
+                      !loginForm.get('userPassword').value
+                    "
+                  >
+                    (Ingrese la contraseña)
+                  </small>
+                </div>
+              </div>
+            </form>
+            <div class="login-div">
+              <button
+                class="btn login-btn"
+                (click)="login()"
+                [disabled]="!loginForm.valid"
+              >
+                Iniciar sesión
+              </button>
+            </div>
+            <section class="forgot-password d-flex justify-content-center mt-4">
+              <a class="forgot-password-link" routerLink="/forgot-password"
+                >¿Olvidaste tu contraseña?</a
+              >
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

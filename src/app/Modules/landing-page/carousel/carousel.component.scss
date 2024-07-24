@@ -1,0 +1,57 @@
+@import '../../../variables.scss';
+
+.play-video {
+    font-size: 4rem;
+    color: hwb(0 100% 0% / 0.70);
+    transition: ease-in;
+    transition-duration: 300ms;
+}
+
+.play-video:hover {
+    font-size: 4.5rem;
+    color: hwb(0 100% 0% / 0.9);
+    transition: ease-out;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+
+.contact {
+    font-weight: bold;
+    color: #fff;
+    font-family: $zohar-font;
+    margin: 0;
+}
+
+.contact-data {
+    margin: 0;
+    color: #fff;
+    font-family: $zohar-font;
+}
+
+.pages {
+    margin: 0;
+    color: #fff;
+    font-family: $zohar-font;
+}
+
+
+.latest-videos {
+    transition: scroll-left 0.3s ease-in-out;
+}
+
+
+button {
+    background-color: #f0f0f000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Definimos la transición */
+  }
+  
+  button:hover {
+    background-color: #ffffff62; /* Cambiamos el color de fondo al pasar el ratón */
+    transform: scale(1.1); /* Efecto de escala al pasar el ratón */
+    border: none;
+  }

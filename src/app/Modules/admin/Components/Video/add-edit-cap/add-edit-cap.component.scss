@@ -1,0 +1,32 @@
+@import "./../../../../../variables.scss";
+
+h1, h1, h3, h4, h5{
+    margin: 0;
+}
+
+.nuevo-video-title{
+    font-family: $primary-font;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: $primary-green
+}
+
+.allow-error{
+    display: flex;
+    flex-direction: column;
+}
+
+.error-message{
+    height: 20px; 
+    margin-top: 5px;
+    width: 100%;
+    text-align: end;
+}
+/* 
+.form-container{
+    max-height: 70%; 
+    height: auto; 
+    overflow-y: overlay; 
+    //border: solid 1px blue;
+} */

@@ -1,0 +1,133 @@
+<div class="container-fluid px-5 py-4" style="width: 99%; height: 95vh">
+    <span class="d-flex justify-content-start">
+        <a class="breadcrumb me-2" [routerLink]="'/admin/videos'">Videos </a> / <a class="breadcrumb-active ms-2">
+            Agregar Contenido Único</a>
+    </span>
+    <section class="nuevo-video-header px-3 py-3 mb-3 mt-3">
+        <div class="row">
+            <div class="col-2 d-flex justify-content-start align-items-center">
+                <a routerLink="/admin/videos"><fa-icon [icon]="faArrowLeft"></fa-icon> Regresar</a>
+            </div>
+            <div class="col-8">
+                <h1 class="nuevo-video-title">Nuevo Contenido Único</h1>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </section>
+    <hr style="margin: 0;">
+    <section class="formulario mt-4" style="max-height: 60%; overflow-y: auto;">
+        <form [formGroup]="peliculaForm" class="">
+            <section class="row px-lg-5 px-xxl-5" style="width: 99%;">
+                <div class="col-6">
+                    <div class="col-12 allow-error">
+                        <label for="exampleFormControlInput1" class="form-label">Título</label>
+                        <input formControlName="video_title" type="text" class="form-control"
+                            id="exampleFormControlInput1" placeholder="Título del Video">
+                        <small class="text-danger error-message">
+                            {{!peliculaForm.get('video_title').value && peliculaForm.get('video_title').touched
+                            ?
+                            'Este campo es obligatorio' : ''}}
+                        </small>
+                    </div>
+
+                    <div class="col-12 mt-4 allow-error">
+                        <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                        <textarea formControlName="video_descripcion" class="form-control"
+                            id="exampleFormControlTextarea1" rows="3"
+                            placeholder="Ingrese la descripción del video"></textarea>
+                        <small class="text-danger error-message">
+                            {{!peliculaForm.get('video_descripcion').value &&
+                            peliculaForm.get('video_descripcion').touched
+                            ?
+                            'Este campo es obligatorio' : ''}}
+                        </small>
+                    </div>
+
+                    <div class="col-12 mt-4 allow-error">
+                        <span></span>
+                        <label for="exampleFormControlTextarea1" class="form-label">Seleccione formato de video</label>
+                        <br>
+                        <span style="display: flex; flex-direction: row;">
+                            <div class="form-check form-check-inline">
+                                <input formControlName="video_tipe" class="form-check-input" type="radio" value="Embed">
+                                <label class="form-check-label option-check" for="inlineRadio1">Embed</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input formControlName="video_tipe" class="form-check-input" type="radio" value="Video">
+                                <label class="form-check-label option-check" for="inlineRadio2">Subir Video</label>
+                            </div>
+                        </span>
+                    </div>
+
+                    <div class="col-12 mt-4 allow-error" *ngIf="peliculaForm.get('video_tipe').value === 'Video'">
+                        <label for="formFile" class="form-label">Nuevo Vídeo</label>
+                        <input class="form-control" formControlName="video_file" type="file" id="formFile">
+                    </div>
+
+                    <div class="col-12 mt-4 allow-error" *ngIf="peliculaForm.get('video_tipe').value === 'Embed'">
+                        <label for="exampleFormControlInput1" class="form-label">Enlace Embed</label>
+                        <input formControlName="video_embed" type="text" class="form-control"
+                            id="exampleFormControlInput1" placeholder="Enlace embed">
+                        <small class="text-danger error-message">
+                            {{!peliculaForm.get('video_embed').value &&
+                            peliculaForm.get('video_embed').touched
+                            ?
+                            'Este campo es obligatorio' : ''}}
+                        </small>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="col-12 allow-error">
+                        <label for="exampleFormControlInput1" class="form-label">Portada</label>
+                        <input (change)="onFileSelected($event)" type="file" accept="image/*" class="form-control">
+                        <small class="text-danger error-message"></small>
+                    </div>
+
+                    <div class="col-12 mt-4 allow-error">
+                        <label for="exampleFormControlInput1" class="form-label">
+                            {{peliculaForm.get('video_cover').value ? 'Vista Previa de Portada' : 'Seleccione una imagen de portada'}}
+                        </label>
+                        <br>
+
+                        <!-- Display on laptop and desktop -->
+                        <span style="width: 60%; height: 20vh;" class="d-md-none d-lg-block">
+                            <img class="w-100 h-100" [src]="peliculaForm.get('video_cover').value" style="object-fit: cover;"
+                                alt="Imagen cargada" *ngIf="peliculaForm.get('video_cover').value">
+                            <div class="d-flex justify-content-center align-items-center w-100 h-100"
+                                *ngIf="!peliculaForm.get('video_cover').value"
+                                style="background-color: #9b9b9b;">
+                                <h3>Imagen de Portada</h3>
+                            </div>
+                        </span>
+
+                        <!-- Display on Tablet -->
+                        <span style="width: 100%; height: 15vh;" class="d-none d-md-block d-lg-none">
+                            <img class="w-100 h-100" [src]="peliculaForm.get('video_cover').value" style="object-fit: cover;"
+                                alt="Imagen cargada" *ngIf="peliculaForm.get('video_cover').value">
+                            <div class="d-flex justify-content-center align-items-center w-100 h-100"
+                                *ngIf="!peliculaForm.get('video_cover').value"
+                                style="background-color: #9b9b9b;">
+                                <h3>Imagen de Portada</h3>
+                            </div>
+                        </span>
+
+                    </div>
+
+                    <div class="col-12 mt-4 allow-error">
+                        <div class="form-check form-switch">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Público</label>
+                            <input formControlName="video_estatus" class="form-check-input" type="checkbox"
+                                style="transform: scale(1.3);" role="switch" id="flexSwitchCheckDefault">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </section>
+
+    <div class="d-flex justify-content-end mt-4">
+        <button class="btn btn-outline-success mx-2" [disabled]="peliculaForm.invalid"
+            (click)="seeFormData()">Continuar</button>
+        <button class="btn btn-outline-danger" [routerLink]="'/admin/videos'">Cancelar</button>
+    </div>
+</div>

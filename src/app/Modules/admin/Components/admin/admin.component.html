@@ -1,0 +1,36 @@
+<div class="container-fluid" style="padding: 0;">
+
+    <mat-drawer-container class="example-container" autosize>
+        <mat-drawer #drawer class="sidenav" style="width: 16vw;" [mode]="modoSidenav" [opened]="bandMinimize">
+            <span class="d-flex justify-content-center mb-3 mt-2">
+                <img src="/assets/Images/logo.png" alt="" srcset="" class="logo">
+            </span>
+            <div class="card-container">
+                <app-user-card></app-user-card>
+            </div>
+            <hr>
+            <div style="display: block;">
+                <hr style="border-color: white; margin: 0.5rem 0; border-width: 3px; width: 90%; margin-left: 5%;">
+                <section style="width: 90%; margin-left: 5%;" *ngFor="let route of routes">
+                    <a [routerLink]="'/admin/' + route.route" [routerLinkActive]="'is-active'"
+                        class="d-flex justify-content-center align-items-center menu-element">
+                        <span class="menu-item">
+                            <fa-icon class="menu-icon" [icon]="route.icon"></fa-icon>
+                            <h4 class="route-name ms-2">{{route.title}}</h4>
+                        </span>
+                    </a>
+                    <hr style="border-color: white; margin: 0.5rem 0; border-width: 3px;">
+                </section>
+            </div>
+        </mat-drawer>
+
+        <div class="example-sidenav-content">
+            <div class="example-sidenav-content col-12" style="padding: 0;">
+                <app-navbar (openSideNav)="minimize($event)"></app-navbar>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+      
+      </mat-drawer-container>
+      
+</div>
